@@ -1,37 +1,35 @@
 "use strict";
 
 let lunch = [
-    {item: "Steak Fajitas", price: 9.95},
-    {item: "Chipss and Guacamole", price: 5.25},
-    {item: "Sweet Tea", price: 2.79}
+    { item: "Steak Fajitas", price: 9.95 },
+    { item: "Chips and Guacamole", price: 5.25 },
+    { item: "Sweet Tea", price: 2.79 }
 ];
 
 
-let lunchLength = lunch.length;
-let lunchSubtotal = - 0;
-for (let i = 0 ; i < lunchLength ; i ++){
-    lunchSubtotal += lunch[i].price;
 
-
-}
+let lunchSubtotal = getPriceTotal(lunch);
 
 console.log(lunchSubtotal);
 
-let taxRate = subtotal * 0.08;
-let tipRate = subtotal * 0.18;
-//let totalDue = subtotal + tax + tipAmount;
+let taxRate = 0.08;
+let tipRate = 0.18;
 
 let taxAmount = lunchSubtotal * taxRate;
 let tipAmount = lunchSubtotal * tipRate;
 
 let total = lunchSubtotal + taxAmount + tipAmount;
 
-console.log(`Tax amount:    ${taxAmount}`);
-console.log(`Tip amount:    ${tipAmount}`);
-console.log(`Total:    ${total}`);
+console.log(`Tax Amount:   ${taxAmount}`);
+console.log(`Tip Amount:   ${tipAmount}`);
+console.log(`Total:        ${total}`);
 
 
-//console.log(subtotal.toFixed(2));
-//console.log(taxRate.toFixed(2));
-//console.log(tipAmount.toFixed(2));
-//console.log(totalDue.toFixed(2));
+function getPriceTotal(order) {
+    let orderLength = order.length;
+    let orderSubtotal = 0;
+    for (let i = 0; i < orderLength; i++) {
+        orderSubtotal += order[i].price;
+    }
+    return orderSubtotal;
+}

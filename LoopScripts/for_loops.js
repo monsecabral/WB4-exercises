@@ -1,5 +1,7 @@
 "use strict";
 
-for (part 1; part 2; part 3){
-    I love loops
+let phrase = "I love loops";
+let i;
+for(i = 1; i <= 7; i++) {
+    console.log(`${i} - ${phrase}`);
 }
